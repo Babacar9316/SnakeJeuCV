@@ -1,0 +1,45 @@
+body {
+
+    height:1000px;
+    margin:0;
+    background-color: black;
+
+}
+
+#bloc_page {
+
+    width: 500px;
+    height: 300px;
+    border : 1px solid white;
+    margin : auto;
+    position: relative;
+
+
+}
+
+li {
+
+    list-style-type: none;
+    text-decoration: underline;
+    color: green;
+    cursor: pointer;
+}
+
+
+ul {
+
+    display : flex;
+    justify-content: space-around;
+    padding: 0;
+
+}
+
+canvas  {
+
+    width: 300px;
+    height: 150px;
+    border: 1px solid white;
+    position: absolute;
+    left: 20%;
+    top:30%;
+}
