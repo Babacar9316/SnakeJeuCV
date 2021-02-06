@@ -14,7 +14,7 @@ export class Block {
         this.couleur = 'green';
 
     }
-
+    /*
     draw(){
 
         ModuleDom.ctx.beginPath();
@@ -22,7 +22,7 @@ export class Block {
         ModuleDom.ctx.fillRect(this.positionX,this.positionY,this.width , this.height);
         ModuleDom.ctx.closePath();
 
-    }
+    } */
 
 
 }

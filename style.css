@@ -1,6 +1,5 @@
 body {
 
-    height:1000px;
     margin:0;
     background-color: black;
 
@@ -12,6 +11,7 @@ body {
     height: 300px;
     border : 1px solid white;
     margin : auto;
+    margin-top: 10%;
     position: relative;
 
 
