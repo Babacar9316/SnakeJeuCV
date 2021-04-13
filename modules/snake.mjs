@@ -89,7 +89,7 @@ export class Snake extends ModuleBlock.Block {
 
             for(let i = 0; i < this.corps.length; i += 2){
                
-                if( i == 0){
+                if(i == 0){
 
                     temp = JSON.parse(JSON.stringify(this.corps[i]));
                     this.corps[i].positionY *= direction;
@@ -120,39 +120,109 @@ export class Snake extends ModuleBlock.Block {
 
     avancer(code){
 
-        var temp, temp2;
+        var test;
 
         if(code == 37){ // gauche
 
-            this.directionSnake(code, -1);
-           
+            test = this.collisionCorps(37);
+            if (test == 'precedent_mouvement'){
 
+                // continuer la direction précédente
+                this.directionSnake(code, -1);
+
+            } else if (test == 'game_over'){
+
+                alert('GAME OVER');
+            }
+
+        
         } else if ( code == 39 ){ //droite
+
+            test = this.collisionCorps(39);
+            if (test == 'precedent_mouvement'){
+
+                this.directionSnake(code, 1);
+
+            } else if (test == 'game_over'){
+
+                alert('GAME OVER');
+
+            }
     
-        this.directionSnake(code, 1);
-      
     
         } else if (code == 38) { // haut
+
+            test = this.collisionCorps(38);
+            if (test == 'precedent_mouvement'){
+
+                
+
+            } else if (test == 'game_over'){
+
+                alert('GAME OVER');
+
+            } else {
+
+                this.directionSnake(code, -1);
+
+            }
             
-            this.directionSnake(code, -1);
-            
-    
+           
         } else if (code == 40) { //bas
 
-            this.directionSnake(code, 1);
-        
-            
+            test = this.collisionCorps(40);
+            if (test == 'precedent_mouvement'){
+
+               
+
+            } else if (test == 'game_over'){
+
+
+                alert('GAME OVER');
+
+            } else {
+
+                this.directionSnake(code, 1);
+
+            }
+             
         } 
 
     }
 
-    collisionCorps(){
+    collisionCorps(code){
 
-        // meme Y meme X avec le chainon 1 tu return 
+        var testTempPositionX;
 
-        // collision avec un chainon du corps autre qua le chainon 1 => game over
+        if(code == 37){
 
-        // sinon directionSnake
+           testTempPositionX = this.corps[0].positionX - this.width;
+
+           if (testTempPositionX == this.corps[1].positionX){
+
+              return "precedent_mouvement";      
+
+           }
+            
+        } else if(code == 39){
+
+            testTempPositionX = this.corps[0].positionX + this.width;
+
+            if(testTempPositionX == this.corps[1].positionX){
+
+                return "precedent_mouvement";
+
+            }
+
+
+        } else if (code == 38){
+
+
+
+        } else {
+
+
+        }
 
     }
 

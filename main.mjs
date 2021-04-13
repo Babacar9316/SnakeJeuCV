@@ -23,7 +23,7 @@ ModuleDom.jouer.addEventListener('click', function(){
 
         snake.init();
         snake.dessiner();
-        id = setInterval(animationJeu, 300);;
+        id = setInterval(animationJeu, 300);
         flagUnefois = true;
 
     }
